@@ -66,6 +66,16 @@ const mount = () => {
  attributes()
 }
 if(selected) {
+ document.body.classList.add('testing')
+ const caseNav=document.createElement('nav');caseNav.id='caseNav'
+ const current=cases.indexOf(selected)
+ for(const [label,index] of [['←',current-1],['Все',-1],['Далее →',current+1]]) {
+  const link=document.createElement('a');link.textContent=label
+  link.href=index<0 || index>=cases.length ? './' : '?case='+cases[index][0]+'&run=2'
+  caseNav.append(link)
+ }
+ document.body.prepend(caseNav)
+
  $('catalog').hidden=true; $('experiment').hidden=false
  $('caseTitle').textContent=selected[1];$('caseNote').textContent=selected[2];$('reload').href=location.href
  mount()
