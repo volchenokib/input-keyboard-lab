@@ -16,7 +16,7 @@ const cases = [
  ['css-early','CSS disc → none · до фокуса','Снять маскирование на pointerdown или перед JS focus.','<input type="text" style="-webkit-text-security:disc" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">','css-early'],
  ['readonly-text','Readonly text → editable · до фокуса','Снять readonly на pointerdown или перед JS focus.','<input type="text" readonly autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">','readonly'],
  ['readonly-password','Readonly password → text · до фокуса','Парольный тип присутствует в истории элемента. Проверяем влияние readonly.','<input type="password" readonly autocomplete="new-password" autocorrect="off" autocapitalize="none" spellcheck="false">','readonly-password'],
- ['section','Текст · отдельная секция autocomplete','Проверить, меняет ли секция предложения.','<input type="text" autocomplete="section-answer off" autocorrect="off" autocapitalize="none" spellcheck="false">']
+ ['section','Текст · отдельная секция autocomplete','Проверить, меняет ли секция предложения.','<input type="text" autocomplete="section-answer new-password" autocorrect="off" autocapitalize="none" spellcheck="false">']
 ]
 const $ = id => document.getElementById(id)
 const selected = cases.find(c => c[0] === new URLSearchParams(location.search).get('case'))
